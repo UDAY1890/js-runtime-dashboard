@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLoop & Async Batcher Visualization</title>
+    <style rel="stylesheet" href="style.css"></style>
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Event Loop & Task Scheduler</h1>
+        <div class="controls">
+            <button id="btn-spike">Trigger Batch Spike</button>
+            <button id="btn-race">Event Loop Race Condition</button>
+            <button id="btn-reset">Clear & Reset</button>
+        </div>
+    </div>
+
+    <!-- Top Left: Synchronous Execution -->
+    <div class="event-loop-dashboard">
+        <div class="panel" id="panel-callStack">
+            <h3>Call Stack</h3>
+            <div class="queue-content" id="content-callStack"></div>
+        </div>
+    </div>
+
+    <!-- Top Right: Browser Background Threads -->
+     <div class="panel" id="panel-webAPIs">
+        <h3>Web APIs/Workers</h3>
+        <div class="queue-content" id="content-webAPIs"></div>
+     </div>
+
+     <!-- Bottom Left: High Priority Queue -->
+      <div class="panel" id="panel-microtasks">
+        <h3>Microtask Queue (Promises)</h3>
+        <div class="queue-content" id="content-microtasks"></div>
+      </div>
+
+      <!-- Bottom Right: Low Priority Queue -->
+       <div class="panel" id="panel-macrotask">
+        <h3>Macrotask Queue (Timer/I-O)</h3>
+        <div class="queue-content" id="content-macrotasks"></div>
+       </div>
+
+       <script src="script.js"></script>
+</body>
+</html>
